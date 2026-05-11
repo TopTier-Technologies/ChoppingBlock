@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b974f3b68bdb2488a479fb4ba0786e, type: 3}
+  m_Name: Grapes
+  m_EditorClassIdentifier: Assembly-CSharp::FoodData
+  foodName: Grapes
+  foodSprite: {fileID: 21300000, guid: afe63076679438c4c8067b77257918a7, type: 3}
+  pointValue: 25
+  isUnlocked: 1
+  requiredScore: 500
+  coinCost: 50
+  season: Summer & Fall
+  foodGroup: Fruit
+  funFact: There are over 8,000 varieties of grapes in the world, and they've been
+    eaten for more than 6,000 years!
+  calories: 62
+  origin: Middle East & Central Asia
+  nutrients: Vitamin K, Antioxidants, Vitamin C, Water content
+  foodPrefab: {fileID: 0}

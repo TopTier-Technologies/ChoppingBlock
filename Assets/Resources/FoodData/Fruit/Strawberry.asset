@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b974f3b68bdb2488a479fb4ba0786e, type: 3}
+  m_Name: Strawberry
+  m_EditorClassIdentifier: Assembly-CSharp::FoodData
+  foodName: Strawberry
+  foodSprite: {fileID: 21300000, guid: 927252d359ef6644e953d6e50e62cb39, type: 3}
+  pointValue: 20
+  isUnlocked: 1
+  requiredScore: 30
+  coinCost: 26
+  season: Spring & Early Summer
+  foodGroup: Fruit
+  funFact: Strawberries are the only fruit that wear their seeds on the outside
+  calories: 49
+  origin: Americas and Europe
+  nutrients: Vitamin C, Folate, Potassium, Manganese, Fiber
+  foodPrefab: {fileID: 0}

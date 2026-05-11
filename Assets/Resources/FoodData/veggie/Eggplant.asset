@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b974f3b68bdb2488a479fb4ba0786e, type: 3}
+  m_Name: Eggplant
+  m_EditorClassIdentifier: Assembly-CSharp::FoodData
+  foodName: Eggplant
+  foodSprite: {fileID: 21300000, guid: f3ae1cd908466034b8eafa54f2f31120, type: 3}
+  pointValue: 20
+  isUnlocked: 1
+  requiredScore: 1000
+  coinCost: 50
+  season: Summer & Fall
+  foodGroup: Vegetable
+  funFact: " Eggplant is actually a fruit \u2014 it grows from a flower and has seeds
+    inside, just like an apple!"
+  calories: 0
+  origin: India
+  nutrients: ' Fiber, Vitamin B6, Potassium, Manganese'
+  foodPrefab: {fileID: 0}

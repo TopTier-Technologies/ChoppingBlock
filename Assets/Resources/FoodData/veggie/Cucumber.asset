@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b974f3b68bdb2488a479fb4ba0786e, type: 3}
+  m_Name: Cucumber
+  m_EditorClassIdentifier: Assembly-CSharp::FoodData
+  foodName: Cucumber
+  foodSprite: {fileID: 21300000, guid: 744efbf88808f3a4e9a9dfb0c8e8b623, type: 3}
+  pointValue: 10
+  isUnlocked: 0
+  requiredScore: 250
+  coinCost: 0
+  season: Summer
+  foodGroup: Vegetable
+  funFact: Cucumbers are 96% water, making them a perfect snack on a hot day! They can actually help cool your whole body down.
+  calories: 16
+  origin: India
+  nutrients: Vitamin K, Potassium, Water
+  foodPrefab: {fileID: 0}

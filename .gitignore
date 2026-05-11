@@ -1,0 +1,58 @@
+# Unity generated folders (DO NOT commit these - huge, rebuilt automatically)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Unity auto-generated VS/Rider solution files (rebuilt by Unity)
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files (DO commit .meta files - Unity needs them)
+# *.meta  <-- DO NOT uncomment this line
+
+# OS junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Desktop.ini
+
+# IDE folders
+.idea/
+.vscode/
+.vs/
+
+# Unity Plastic SCM (built-in Unity version control - using Git instead)
+.plastic/
+
+# Build output
+*.apk
+*.aab
+*.ipa
+*.unitypackage
+*.app
+
+# Crash logs
+sysinfo.txt
+crashlytics-build.properties
+
+# Unity private sidecar files
+*.private.0

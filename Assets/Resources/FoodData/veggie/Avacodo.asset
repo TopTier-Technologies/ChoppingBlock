@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b974f3b68bdb2488a479fb4ba0786e, type: 3}
+  m_Name: Avacodo
+  m_EditorClassIdentifier: Assembly-CSharp::FoodData
+  foodName: Avacodo
+  foodSprite: {fileID: 21300000, guid: 31b26553c6a28344d9bcfd992e0beadc, type: 3}
+  pointValue: 10
+  isUnlocked: 1
+  requiredScore: 250
+  coinCost: 25
+  season: Year-round
+  foodGroup: Fruit
+  funFact: Avocados are one of the only fruits that don't ripen on the tree
+  calories: 240
+  origin: Mexico & Central America
+  nutrients: Healthy Fats, Vitamin K, Folate, Vitamin C, Potassium, Vitamin B5
+  foodPrefab: {fileID: 0}
