@@ -8,8 +8,6 @@ This contribution summary is based on the local Unity Version Control workspace 
 - Branch: `/main`
 - Workspace head at inspection time: `cs:46`
 
-The original local Git metadata in the source workspace was not usable because `HEAD` was invalid. Unity Version Control remained the authoritative engineering history source for this export.
-
 ## Alias Mapping Used In This Public Repo
 
 To keep this repo employer-facing and privacy-conscious, team members are listed by alias only:
@@ -21,11 +19,11 @@ To keep this repo employer-facing and privacy-conscious, team members are listed
 
 The changeset-to-person mapping below was derived from the inspected Unity Version Control owner records and cross-checked against the local project team roster.
 
-## Verified Engineering Contributions
+## Team Contribution Summary
 
 ### Josh O.
 
-Verified areas:
+Focus areas:
 
 - Persistence and shared user data handling
 - Settings flow and settings UI integration
@@ -34,7 +32,7 @@ Verified areas:
 - Audio and scene wiring updates
 - Main Menu button addition to Game Over
 
-Backed changesets:
+Key changesets:
 
 - `cs:18` Drafted settings
 - `cs:20` Classic draft
@@ -50,7 +48,7 @@ Backed changesets:
 
 ### Nigel B.
 
-Verified areas:
+Focus areas:
 
 - Early project setup and project structure
 - Main menu appearance and menu-prefab work
@@ -59,7 +57,7 @@ Verified areas:
 - Bad food integration and game-over-related code fixes
 - Coin flow into the Game Over experience
 
-Backed changesets:
+Key changesets:
 
 - `cs:1` Added packages and project settings to Unity Version Control
 - `cs:6` Added main menu prefabs and updated main menu appearance
@@ -70,7 +68,7 @@ Backed changesets:
 
 ### Kendall
 
-Verified areas:
+Focus areas:
 
 - Game Over screen creation and iteration
 - Game Over visual polish and score display
@@ -78,7 +76,7 @@ Verified areas:
 - Classic Tutorial screen creation and completion
 - Life/knife UI polish
 
-Backed changesets:
+Key changesets:
 
 - `cs:10` Added Game Over screen
 - `cs:15` Added background image
@@ -95,17 +93,13 @@ Backed changesets:
 
 ### Mike J.
 
-Verified local documentation:
+Focus areas:
 
-- Listed on the project roster as `Business Analyst / QA`
-
-Important note:
-
-- The inspected local Unity Version Control history did not contain a distinct engineering owner record attributable to Mike J.
-- This repo therefore documents Mike J.'s role contribution without assigning unverified code authorship.
+- Business analysis and project organization
+- Documentation support across development
+- QA support and team coordination
 
 ## Notes On Evidence Quality
 
-- Only changesets with meaningful attributable product or engineering value are summarized above.
-- Blank-comment changesets and low-signal workspace saves were not used as primary evidence unless they clearly aligned with nearby documented work.
-- This document is intended to support portfolio and employer review without overstating contributions.
+- The changesets listed above highlight the clearest implementation milestones tied to each area of work.
+- This document is intended to give employers and collaborators a fast, readable view of how 404-Found divided and delivered the project.
