@@ -131,3 +131,59 @@ jobs:
           name: ios-ipa-unsigned
           path: ${{ runner.temp }}/ChoppingBlock-beta-unsigned.ipa
           retention-days: 30
+
+  # Upload both artifacts to the private Gitea release page
+  upload-to-gitea:
+    name: Upload to Gitea
+    needs: [build-android, build-ipa]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: android-apk
+          path: artifacts/android
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ios-ipa-unsigned
+          path: artifacts/ios
+
+      - name: Create release and upload
+        env:
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+          GITEA_URL: https://git.tttmsp.com
+        run: |
+          TAG="build-$(date +%Y%m%d-%H%M%S)"
+          REPO="TopTier_Technologies/ChoppingBlock"
+
+          RELEASE_JSON=$(curl -s -X POST \
+            -H "Authorization: token ${GITEA_TOKEN}" \
+            -H "Content-Type: application/json" \
+            "${GITEA_URL}/api/v1/repos/${REPO}/releases" \
+            -d "{
+              \"tag_name\": \"${TAG}\",
+              \"name\": \"Build ${TAG}\",
+              \"body\": \"Automated build from CI run #${{ github.run_number }}\",
+              \"draft\": false,
+              \"prerelease\": true
+            }")
+
+          RELEASE_ID=$(echo "$RELEASE_JSON" | python3 -c "import sys,json; print(json.load(sys.stdin)['id'])")
+          echo "Created release ID: $RELEASE_ID"
+
+          APK=$(find artifacts/android -name "*.apk" | head -1)
+          if [ -n "$APK" ]; then
+            curl -s -X POST \
+              -H "Authorization: token ${GITEA_TOKEN}" \
+              "${GITEA_URL}/api/v1/repos/${REPO}/releases/${RELEASE_ID}/assets?name=ChoppingBlock-beta.apk" \
+              -F "attachment=@${APK}"
+          fi
+
+          IPA=$(find artifacts/ios -name "*.ipa" | head -1)
+          if [ -n "$IPA" ]; then
+            curl -s -X POST \
+              -H "Authorization: token ${GITEA_TOKEN}" \
+              "${GITEA_URL}/api/v1/repos/${REPO}/releases/${RELEASE_ID}/assets?name=ChoppingBlock-beta-unsigned.ipa" \
+              -F "attachment=@${IPA}"
+          fi
