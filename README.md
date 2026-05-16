@@ -10,15 +10,15 @@ This app responds to a real nutrition problem. Too many kids are growing up surr
 
 ## Demo
 
-[Watch Chopping Block Demo V2](./media/chopping-block-demo-v2.mp4)
+[Open the playable beta demo page](https://joshrfr.github.io/ChoppingBlock/)
 
 <p align="center">
-  <a href="./media/chopping-block-demo-v2.mp4">
+  <a href="https://joshrfr.github.io/ChoppingBlock/">
     <img src="./media/background.png" alt="Chopping Block demo preview" width="560">
   </a>
 </p>
 
-The demo video is included in this repository so visitors can open it directly from GitHub and view the current build experience.
+Chopping Block Demo V2 is included in this repository and can be played through the GitHub Pages demo page for the beta release.
 
 ## What The App Does
 
@@ -62,7 +62,7 @@ Source-control-backed contribution details are documented in [docs/CONTRIBUTIONS
 
 ## Repository Scope
 
-This repository is a public portfolio snapshot of the final Unity project workspace exported from Unity Version Control `/main` at `cs:46` head.
+This repository is a public portfolio snapshot of the beta release Unity project workspace exported from Unity Version Control `/main` at `cs:46` head.
 
 Included:
 
