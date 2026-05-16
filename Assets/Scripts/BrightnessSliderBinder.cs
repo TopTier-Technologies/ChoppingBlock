@@ -20,11 +20,11 @@ public class BrightnessSliderBinder : MonoBehaviour
             return;
         }
 
+        ScreenBrightnessOverlay.EnsureExists();
         slider.onValueChanged.AddListener(OnValueChanged);
-        if (ScreenBrightnessOverlay.Instance != null)
-        {
-            slider.value = ScreenBrightnessOverlay.Instance.GetBrightness();
-        }
+        slider.SetValueWithoutNotify(ScreenBrightnessOverlay.Instance != null
+            ? ScreenBrightnessOverlay.Instance.GetBrightness()
+            : UserDataStore.GetBrightness(1f));
     }
 
     void OnDisable()

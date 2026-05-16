@@ -1,0 +1,133 @@
+name: Build Android APK + iOS IPA
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Assets/**'
+      - 'ProjectSettings/**'
+      - 'Packages/**'
+
+jobs:
+  build-android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Android-
+            Library-
+
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.3.6f1
+          targetPlatform: Android
+          buildMethod: ReleaseBuild.BuildAndroidApkBatch
+          buildsPath: Builds
+          androidExportType: androidPackage
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: |
+            Builds/Android/*.apk
+          retention-days: 30
+
+  export-ios-xcode:
+    name: iOS Xcode Export
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-iOS-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-iOS-
+            Library-
+
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: 6000.3.6f1
+          targetPlatform: iOS
+          buildMethod: ReleaseBuild.ExportIosXcodeProjectBatch
+          buildsPath: Builds
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-xcode-project
+          path: Builds/iOS/
+          retention-days: 30
+
+  build-ipa:
+    name: iOS IPA (unsigned)
+    needs: export-ios-xcode
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ios-xcode-project
+          path: xcode-project
+
+      - name: Find Xcode project
+        run: |
+          XCPROJ=$(find xcode-project -name "*.xcodeproj" -maxdepth 3 | head -1)
+          echo "Found Xcode project: $XCPROJ"
+          echo "XCPROJ_DIR=$(dirname "$XCPROJ")" >> $GITHUB_ENV
+          echo "XCPROJ_NAME=$(basename "$XCPROJ")" >> $GITHUB_ENV
+
+      - name: Build .app (unsigned)
+        run: |
+          cd "$XCPROJ_DIR"
+          xcodebuild \
+            -project "$XCPROJ_NAME" \
+            -scheme "Unity-iPhone" \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath "$RUNNER_TEMP/app.xcarchive" \
+            archive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            DEVELOPMENT_TEAM="" \
+            -allowProvisioningUpdates=NO \
+            | tail -20
+
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p "$RUNNER_TEMP/Payload"
+          cp -r "$RUNNER_TEMP/app.xcarchive/Products/Applications/"*.app "$RUNNER_TEMP/Payload/"
+          cd "$RUNNER_TEMP"
+          zip -r ChoppingBlock-beta-unsigned.ipa Payload
+          ls -lh ChoppingBlock-beta-unsigned.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa-unsigned
+          path: ${{ runner.temp }}/ChoppingBlock-beta-unsigned.ipa
+          retention-days: 30

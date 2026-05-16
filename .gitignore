@@ -56,3 +56,16 @@ crashlytics-build.properties
 
 # Unity private sidecar files
 *.private.0
+
+# Node.js (used locally for GitHub secret encryption tooling)
+node_modules/
+package.json
+package-lock.json
+
+# Unity temp/session files
+.utmp/
+.vsconfig
+
+# ProjectSettings auto-generated package cache
+ProjectSettings/Packages/
+Builds/

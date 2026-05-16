@@ -26,7 +26,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void OpenAccount()
     {
-        SceneManager.LoadScene("Account");
+        // The Account flow is deferred out of the beta release.
+        // Route to Settings so the menu never points at a missing scene.
+        SceneManager.LoadScene("Settings");
     }
 
     public void OpenBackgroundSelect()

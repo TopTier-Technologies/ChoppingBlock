@@ -9,6 +9,23 @@ public class ScreenBrightnessOverlay : MonoBehaviour
 
     private Image overlayImage;
 
+    public static ScreenBrightnessOverlay EnsureExists()
+    {
+        if (Instance != null)
+        {
+            return Instance;
+        }
+
+        var existing = FindAnyObjectByType<ScreenBrightnessOverlay>();
+        if (existing != null)
+        {
+            return existing;
+        }
+
+        var overlayObject = new GameObject("BrightnessOverlay");
+        return overlayObject.AddComponent<ScreenBrightnessOverlay>();
+    }
+
     void Awake()
     {
         if (Instance != null)
