@@ -1,8 +1,24 @@
+<p align="center">
+  <img src="./media/logo.png" alt="The Chopping Block logo" width="240">
+</p>
+
 # 404-Found Presents: The Chopping Block
 
 The Chopping Block is a Unity-built health equity game created from scratch by 404-Found to help students and younger kids build stronger food knowledge through play. The project was designed around a simple idea: healthy eating education works better when children are engaged, rewarded, and curious, not just instructed.
 
 This app responds to a real nutrition problem. Too many kids are growing up surrounded by poor food choices, weak nutrition habits, and limited exposure to interactive learning tools that make healthy eating feel relevant. The Chopping Block turns that challenge into an active gameplay loop where players tap healthy foods, earn coins, unlock content, and learn more about what they eat.
+
+## Demo
+
+[Watch Chopping Block Demo V2](./media/chopping-block-demo-v2.mp4)
+
+<p align="center">
+  <a href="./media/chopping-block-demo-v2.mp4">
+    <img src="./media/background.png" alt="Chopping Block demo preview" width="900">
+  </a>
+</p>
+
+The demo video is included in this repository so visitors can open it directly from GitHub and view the current build experience.
 
 ## What The App Does
 
@@ -39,7 +55,7 @@ This public repository uses team aliases only.
 
 - Josh O. focused on systems integration, persistence, settings/account flows, and major menu/application wiring.
 - Nigel B. focused on core gameplay systems, food unlock logic, debugging, and gameplay-to-game-over flow improvements.
-- Kendall focused on major scene work, especially Game Over and Classic Tutorial presentation and UI progression.
+- Kendal H. focused on major scene work, especially Game Over and Classic Tutorial presentation and UI progression.
 - Mike J. helped keep the project organized, documented, and product-focused through business analysis and QA support across development.
 
 Source-control-backed contribution details are documented in [docs/CONTRIBUTIONS.md](docs/CONTRIBUTIONS.md).

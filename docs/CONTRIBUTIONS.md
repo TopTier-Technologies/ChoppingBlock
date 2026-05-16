@@ -14,7 +14,7 @@ To keep this repo employer-facing and privacy-conscious, team members are listed
 
 - Josh O.
 - Nigel B.
-- Kendall
+- Kendal H.
 - Mike J.
 
 The changeset-to-person mapping below was derived from the inspected Unity Version Control owner records and cross-checked against the local project team roster.
@@ -66,7 +66,7 @@ Key changesets:
 - `cs:29` Added bad foods with code, updated code so Game Over works properly, added coins to Game Over
 - `cs:32` Fixed script issues
 
-### Kendall
+### Kendal H.
 
 Focus areas:
 
