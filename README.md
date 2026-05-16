@@ -14,7 +14,7 @@ This app responds to a real nutrition problem. Too many kids are growing up surr
 
 <p align="center">
   <a href="./media/chopping-block-demo-v2.mp4">
-    <img src="./media/background.png" alt="Chopping Block demo preview" width="900">
+    <img src="./media/background.png" alt="Chopping Block demo preview" width="560">
   </a>
 </p>
 
