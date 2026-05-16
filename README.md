@@ -10,15 +10,15 @@ This app responds to a real nutrition problem. Too many kids are growing up surr
 
 ## Demo
 
-[Watch Chopping Block Demo V2](./media/chopping-block-demo-v2.mp4)
+[Watch Chopping Block Demo V2](https://joshrfr.github.io/ChoppingBlock/)
 
 <p align="center">
-  <a href="./media/chopping-block-demo-v2.mp4">
+  <a href="https://joshrfr.github.io/ChoppingBlock/">
     <img src="./media/background.png" alt="Chopping Block demo preview" width="560">
   </a>
 </p>
 
-Chopping Block Demo V2 is included in this repository for the beta release and can be opened directly from the repository.
+Chopping Block Demo V2 is included in this repository for the beta release, and the README demo links route to the live beta demo page.
 
 ## What The App Does
 
