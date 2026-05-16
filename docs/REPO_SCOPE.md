@@ -1,6 +1,6 @@
 # Public Repo Scope
 
-This repository is a curated public export of the Chopping Block Unity project.
+This repository is a curated public export of the Chopping Block beta release Unity project.
 
 ## Included
 
@@ -36,4 +36,4 @@ This repository is a curated public export of the Chopping Block Unity project.
 
 ## Why The Repo Is Curated
 
-The goal of this repo is to present the actual application work, contributor story, and Unity project structure without publishing generated artifacts, private workspace metadata, or unnecessary baggage that does not help employers evaluate the team’s work.
+The goal of this repo is to present the beta release application work, contributor story, and Unity project structure without publishing generated artifacts, private workspace metadata, or unnecessary baggage that does not help employers evaluate the team's work.
